@@ -40,23 +40,23 @@ async def main():
         lat, lon, city = await coordinates_task
         joke = await joke_task
         
-        print(f"\n📍 Местоположение: {city}")
-        print(f"🌐 Координаты: {lat}, {lon}")
+        print(f"\nМестоположение: {city}")
+        print(f"Координаты: {lat}, {lon}")
         
-        print("\n😄 Случайная шутка:")
+        print("\nСлучайная шутка:")
         print(joke)
         
         weather = await get_weather(lat, lon)
         
-        print("\n🌤 Погода:")
-        print(f"🌡 Температура: {weather['temp']}°C (ощущается как {weather['feels_like']}°C)")
-        print(f"📶 Влажность: {weather['humidity']}%")
-        print(f"☁ Облачность: {weather['cloud_pct']}%")
-        print(f"💨 Ветер: {weather['wind_speed']} м/с, направление {weather['wind_degrees']}°")
-        print(f"📊 Диапазон температур: от {weather['min_temp']}°C до {weather['max_temp']}°C")
+        print("\nПогода:")
+        print(f"-Температура: {weather['temp']}°C (ощущается как {weather['feels_like']}°C)")
+        print(f"-Влажность: {weather['humidity']}%")
+        print(f"-Облачность: {weather['cloud_pct']}%")
+        print(f"-Ветер: {weather['wind_speed']} м/с, направление {weather['wind_degrees']}°")
+        print(f"-Диапазон температур: от {weather['min_temp']}°C до {weather['max_temp']}°C")
         
     except Exception as e:
-        print(f"\n❌ Ошибка: {e}")
+        print(f"\nОшибка: {e}")
 
 if __name__ == "__main__":
     asyncio.run(main())
